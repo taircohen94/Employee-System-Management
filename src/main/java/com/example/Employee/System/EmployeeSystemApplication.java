@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EmployeeSystemApplication {
 
 	public static void main(String[] args) {
-		// hi ff
+		// hi ff lala
 		SpringApplication.run(EmployeeSystemApplication.class, args);
 	}
 
