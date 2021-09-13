@@ -1,4 +1,4 @@
-package com.example.Employee.System;
+package Online.Employee.System;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

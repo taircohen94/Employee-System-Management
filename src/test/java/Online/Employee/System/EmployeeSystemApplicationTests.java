@@ -1,4 +1,4 @@
-package com.example.Employee.System;
+package Online.Employee.System;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
