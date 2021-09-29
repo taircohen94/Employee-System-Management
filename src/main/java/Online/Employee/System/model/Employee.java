@@ -1,12 +1,18 @@
 package Online.Employee.System.model;
 
-import javax.persistence.*;
 
+import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Validated
 @Entity
 @Table(name = "Employee")
 public class Employee {
 
     private long id;
+    @NotNull
     private String firstName;
     private String lastName;
     private String emailId;

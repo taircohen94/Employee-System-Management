@@ -4,7 +4,6 @@ import Online.Employee.System.exception.ResourceNotFoundException;
 import Online.Employee.System.model.Employee;
 import Online.Employee.System.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +21,6 @@ public class EmployeeService implements IEmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    @Override
     public ResponseEntity<Employee> updateEmployee(Long employeeId, Employee employeeDetails) throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
@@ -33,21 +31,17 @@ public class EmployeeService implements IEmployeeService {
         final Employee updatedEmployee = employeeRepository.save(employee);
         return ResponseEntity.ok(updatedEmployee);
     }
-    @Override
+
     public ResponseEntity<Employee> getEmployeeById(Long employeeId) throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
         return ResponseEntity.ok().body(employee);
     }
 
-    @Override
     public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
-
-
-    @Override
     public Map<String, Boolean> deleteEmployee(Long employeeId) throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
@@ -57,7 +51,6 @@ public class EmployeeService implements IEmployeeService {
         return response;
     }
 
-    @Override
     public List<Employee> getAllEmployees() {
         return null;
     }
