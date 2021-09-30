@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Online.Employee.System.exception.ResourceNotFoundException;
 import Online.Employee.System.model.Employee;
 
+import javax.validation.Valid;
 
 
 @RestController
@@ -39,7 +40,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public Employee createEmployee(@RequestBody @Valid Employee employee) {
         return employeeService.createEmployee(employee);
     }
 
