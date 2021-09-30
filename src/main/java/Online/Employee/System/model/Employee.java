@@ -6,7 +6,6 @@ import org.springframework.validation.annotation.Validated;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Validated
 @Entity
 @Table(name = "Employee")
 public class Employee {
